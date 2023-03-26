@@ -13,9 +13,6 @@ function App() {
 
   return (
     <div className="App">
-      {/* {
-        count.map(product=>)
-      } */}
       <Header></Header>
     </div>
   )
