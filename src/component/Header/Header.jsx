@@ -4,7 +4,7 @@ import logo from '../../images/Logo.svg';
 const Header = () => {
     return (
         <div className='nav
-         bg-slate-700 flex flex-col md:flex-row items-center justify-between px-[10%] py-3'>
+         bg-[#1C2B35] flex flex-col md:flex-row items-center justify-between px-[10%] py-3'>
             <img className='h-full' src={logo} alt="" />
             <div className='flex gap-6 md:gap-10 text-white font-bold text-lg'>
                 <a className='hover:text-orange-600' href="/shop">Shop</a>
