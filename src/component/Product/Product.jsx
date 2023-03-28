@@ -9,7 +9,7 @@ const Product = (props) => {
     return (
         <>
             <div className="card bg-base-100 shadow-xl border-2 border-slate-300">
-                <figure><img className='' src="" alt="Shoes" /></figure>
+                <figure><img className='' src={img} alt="Shoes" /></figure>
                 <div className='mb-16'>
                     <div className='px-2 py-2'>
                         <div className='space-y-2'>
