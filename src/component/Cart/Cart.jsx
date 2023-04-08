@@ -1,6 +1,7 @@
 import React from 'react';
 
-const Cart = ({ cart }) => {
+const Cart = ({ cart, handleClearCart, children }) => {
+    console.log(cart)
 
     // Accessing single product of cart:
     let totalPrice = 0;
@@ -21,6 +22,10 @@ const Cart = ({ cart }) => {
                 <p>Shipping Charge: ${totalShipping.toFixed(2)}</p>
                 <p>Tax: ${tax.toFixed(2)}</p>
                 <h5 className='font-bold'>Grand Total: ${grandTotal.toFixed(2)}</h5>
+                <div className='space-y-2'>
+                    <button className='bg-red-600 text-white w-full font-bold' onClick={handleClearCart}>Clear Cart</button>
+                    {children}
+                </div>
             </div>
         </div>
     );

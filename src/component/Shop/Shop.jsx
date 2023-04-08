@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { addToDb, getShoppingCart } from '../../utilities/fakedb';
+import { Link } from 'react-router-dom';
+import { addToDb, deleteShoppingCart, getShoppingCart } from '../../utilities/fakedb';
 import Cart from '../Cart/Cart';
 import Product from '../Product/Product';
 
@@ -41,6 +42,11 @@ const Shop = () => {
 
         addToDb(product.id)
     }
+
+    const handleClearCart = () => {
+        setCart([]);
+        deleteShoppingCart();
+    }
     return (
         <div className='flex px-[10%] pt-10 justify-between'>
             <div className='w-[80%] grid grid-cols-1 md:grid-cols-2 gid lg:grid-cols-3 xl:grid-cols-4 gap-5 py-5'>
@@ -53,7 +59,16 @@ const Shop = () => {
                         ></Product>)
                 }
             </div>
-            <Cart cart={cart}></Cart>
+            <Cart
+                cart={cart}
+                handleClearCart={handleClearCart}
+            >
+                <div>
+                    <Link to='orders'>
+                        <button className='bg-red-600 text-white font-bold w-full text-center'>Review Order</button>
+                    </Link>
+                </div>
+            </Cart>
         </div>
     );
 };
