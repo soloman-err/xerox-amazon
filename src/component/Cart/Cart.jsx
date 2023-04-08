@@ -13,13 +13,15 @@ const Cart = ({ cart }) => {
     const grandTotal = totalPrice + totalShipping + tax;
 
     return (
-        <div className='bg-orange-300 grid-cols-10 w-[15%] px-2 sticky top-0'>
-            <h2 className='text-center text-lg font-bold'>Order Summary</h2>
-            <p>Selected Items: {cart.length}</p>
-            <p>Total Price: ${totalPrice.toFixed(2)}</p>
-            <p>Shipping Charge: ${totalShipping.toFixed(2)}</p>
-            <p>Tax: ${tax.toFixed(2)}</p>
-            <h5 className='font-bold'>Grand Total: ${grandTotal.toFixed(2)}</h5>
+        <div className='grid-cols-10 w-[15%] px-2'>
+            <div className='sticky top-10 bg-warning px-2 py-10 rounded'>
+                <h2 className='text-center text-lg font-bold'>Order Summary</h2>
+                <p>Selected Items: {cart.length}</p>
+                <p>Total Price: ${totalPrice.toFixed(2)}</p>
+                <p>Shipping Charge: ${totalShipping.toFixed(2)}</p>
+                <p>Tax: ${tax.toFixed(2)}</p>
+                <h5 className='font-bold'>Grand Total: ${grandTotal.toFixed(2)}</h5>
+            </div>
         </div>
     );
 };
